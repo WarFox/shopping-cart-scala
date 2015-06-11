@@ -9,7 +9,7 @@ object ShoppingCart {
   def checkout(items: Array[String]): Double = {
     var total: Double = 0.0
     for (item <- items) {
-      val price: Double = priceList.get(item).get
+      val price: Double = priceList.get(item toLowerCase()).get
       total += price
     }
     BigDecimal(total).setScale(2, RoundingMode.HALF_EVEN).toDouble
