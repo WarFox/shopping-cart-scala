@@ -16,6 +16,11 @@ class ShoppingCart$Test extends Specification {
     ShoppingCart.getPrice("nonexistent") must be equalTo 0
   }
 
+  "Get price should work in case insensitive manner" in {
+    ShoppingCart.getPrice("Apple") must be equalTo 0.60
+    ShoppingCart.getPrice("OrAnge") must be equalTo 0.25
+  }
+
   "2 Apples should cost 1.20 on checkout" in {
     ShoppingCart.checkout(Array("apple", "apple")) must be equalTo 1.20
   }
