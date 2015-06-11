@@ -4,8 +4,16 @@ import org.specs2.mutable.Specification
 
 class Offers$Test extends Specification {
 
-  "2 items should cost 1.00 when price is 0.50 for 1, on buyOneGetOne offer" in {
-    Offers.buyOneGetOne(2 , 0.50) must be equalTo 1.00
+  "2 items should cost 0.50 when price for 1 is 0.50, on buyOneGetOne offer" in {
+    Offers.buyOneGetOne(2 , 0.50) must be equalTo 0.50
+  }
+
+  "3 items should cost 1.00 when price for 1 is 0.50, on buyOneGetOne offer" in {
+    Offers.buyOneGetOne(3 , 0.50) must be equalTo 1.00
+  }
+
+  "4 items should cost 1.00 when price for 1 is 0.50, on buyOneGetOne offer" in {
+    Offers.buyOneGetOne(3 , 0.50) must be equalTo 1.00
   }
 
 }
