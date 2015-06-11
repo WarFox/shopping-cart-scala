@@ -16,4 +16,8 @@ class ShoppingCart$Test extends Specification {
     ShoppingCart.checkout(Array("apple", "apple")) must be equalTo 1.20
   }
 
+  "2 Oranges should cost 0.5 on checkout" in {
+    ShoppingCart.checkout(Array("orange", "orange")) must be equalTo 0.5
+  }
+
 }
