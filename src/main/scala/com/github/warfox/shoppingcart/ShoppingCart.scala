@@ -15,6 +15,15 @@ object ShoppingCart {
     BigDecimal(total).setScale(2, RoundingMode.HALF_EVEN).toDouble
   }
 
+  def checkoutWithOffers(items: Array[String]): Double = {
+    var total: Double = 0.0
+    val noOfApples: Int = items.count(p => p.equalsIgnoreCase("apple"))
+    val noOfOranges: Int = items.count(p => p.equalsIgnoreCase("orange"))
+
+    total = Offers.offer("apple")(noOfApples) + Offers.offer("orange")(noOfOranges)
+    BigDecimal(total).setScale(2, RoundingMode.HALF_EVEN).toDouble
+  }
+
   def getPrice(item: String): Double = {
     priceList.getOrElse(item toLowerCase(), 0)
   }
