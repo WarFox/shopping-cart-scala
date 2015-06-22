@@ -10,6 +10,7 @@ object Offers {
     val price: Double = ShoppingCart.getPrice(item)
     item toLowerCase() match {
       case "apple" => (numberOfItems:Int) => buyOneGetOne(numberOfItems, price)
+      case "banana" => (numberOfItems:Int) => buyOneGetOne(numberOfItems, price)
       case "orange" => (numberOfItems:Int) => threeForTwo(numberOfItems, price)
       case _ => (numberOfItems:Int) => numberOfItems * price
     }

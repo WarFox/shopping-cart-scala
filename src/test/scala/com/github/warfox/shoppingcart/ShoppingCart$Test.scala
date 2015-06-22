@@ -12,6 +12,10 @@ class ShoppingCart$Test extends Specification {
     ShoppingCart.getPrice("orange") must be equalTo 0.25
   }
 
+  "Price of an banana is 0.20'" in {
+    ShoppingCart.getPrice("banana") must be equalTo 0.20
+  }
+
   "Price of item that doesn't exist is 0" in {
     ShoppingCart.getPrice("nonexistent") must be equalTo 0
   }
@@ -63,6 +67,10 @@ class ShoppingCart$Test extends Specification {
 
   "2 Apples should cost 0.60 on checkout with offers" in {
     ShoppingCart.checkoutWithOffers(Array("apple", "apple")) must be equalTo 0.60
+  }
+
+  "2 Bananas should cost 0.20 on checkout with offers" in {
+    ShoppingCart.checkoutWithOffers(Array("banana", "banana")) must be equalTo 0.20
   }
 
   "3 Apples should cost 1.20 on checkout with offers" in {
