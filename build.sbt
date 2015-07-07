@@ -9,3 +9,5 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.12" % Test,
   "org.specs2" %% "specs2-core" % "3.6.1" % Test
 )
+
+resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
